@@ -35,21 +35,73 @@ terraform apply --auto-approve
 ```
 ##  Lab 1 Task 2
 
-You have to do it manually on APEX: create workspace.
+You have to follow instructions from LiveLabs: Do it manually on APEX, create workspace.
 
 ##  Lab 1 Task 3
 
-OPTIONAL
+Optional to review access using SQL Options.
 
 ##  Lab 2 Task 1
 
 On the same folder of tf, you get variables (same password as optional, and Autonomous Database ID) using
 ```
-export adb_ocid=$(terraform output adb_ocid)
+export adb_ocid=$(terraform output adb_ocid| tr -d '"')
 ```
 ```
-export adb_password=$(terraform output adb_password)
+export adb_password=$(terraform output adb_password| tr -d '"')
+```
+The replacement will be done automatically on 
+```
+oci db autonomous-database generate-wallet --generate-type ALL --file Wallet_APEXworkshop.zip --password [Insert Password] --autonomous-database-id [Insert OCID]
 ```
 
+using 
 
-Finally, instead of using the file mentioned on the Lab 2, Tasks use this file [workshop_changelogs_v2.zip](./workshop_changelogs_v2.zip)
+```
+cd ~
+```
+
+```
+oci db autonomous-database generate-wallet --generate-type ALL --file Wallet_APEXworkshop.zip --password $adb_password --autonomous-database-id $adb_ocid
+```
+Review that your file Wallet_APEXworkshop.zip is located on your current folder using ```ls -la```
+
+##  Lab 2 Task 2
+
+Instead of using the file mentioned on LiveLabs, use this file [workshop_changelogs_v2.zip](./workshop_changelogs_v2.zip) that you have download on the git repo.
+
+unzip the file
+```
+cd ~
+```
+
+```
+unzip -d workshop_changelogs ./devopsdays2025/workshop_changelogs_v2.zip
+```
+
+##  Lab 2 Task 3
+
+You have to follow instructions from LiveLabs: SQL Connection.
+
+The wallet has a password to stablish a connection, you use the same that you use on Lab 2 Task 1 (It is the same the rest).
+
+##  Lab 2 Task 4
+
+You have to follow instructions from LiveLabs: Deploy Your APEX Application, REST APIs, and Database Objects.
+
+##  Lab 2 Task 5
+
+You have to follow instructions from LiveLabs: View Your Deployments.
+
+In addition, you can leave to have the following information:
+
+Workspace: Liquibase_Demo
+
+Workspace: LIQUIBASE_DEMO
+
+Password: Usual_Password
+
+
+##  Lab 2 Task 6
+
+You have to follow instructions from LiveLabs: Update Your APEX Application.
