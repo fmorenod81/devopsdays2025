@@ -2,6 +2,9 @@
 
 This code replace the Lab 1/Task 1 from the [Deploy APEX Apps In The Time It Takes To Make Your Morning Coffee](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3793&p210_wec=&session=3985234775064)
 
+
+The presentation is [here](./Un%20café%20desplegando%20Aplicaciones%20Low-Code.pdf)
+
 After following the requirements (OCI Account), you have to enter to the Web Console.
 
 Create a compartment where you have to create your Autonomous Database, you can follow this [instructions](https://docs.oracle.com/en/cloud/paas/integration-cloud/oracle-integration-oci/creating-oci-compartment.html) and find his [Compartment OCID](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport_topic-Locating_Oracle_Cloud_Infrastructure_IDs.htm#Finding_the_OCID_of_a_Compartment)
@@ -105,3 +108,14 @@ Password: Usual_Password
 ##  Lab 2 Task 6
 
 You have to follow instructions from LiveLabs: Update Your APEX Application.
+
+##  Cleanup resources
+
+On the Cloudshell, Go to the folder: 
+```
+cd ./devopsdays2025/tf
+```
+
+```
+terraform destroy --auto-approve
+```
